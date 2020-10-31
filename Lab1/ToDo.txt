@@ -1,0 +1,5 @@
+TO DO - Lab 1 EGer
+
+- cortar fotos do osciloscópio. Manter só a escala que aparece em cima.
+
+- 
