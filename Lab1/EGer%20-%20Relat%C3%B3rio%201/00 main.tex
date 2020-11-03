@@ -1,0 +1,139 @@
+\documentclass[a4paper, oneside]{article}
+
+%% Language and font encodings
+\usepackage[portuguese]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+
+%% Sets page size and margins
+\usepackage[a4paper,top=2.2cm,bottom=2.2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+
+\usepackage{fancyhdr}
+\usepackage{titlepic}
+\usepackage{tabto}
+\usepackage{amsfonts}
+\usepackage{commath}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage[labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{subfiles}
+\usepackage{multicol}
+\usepackage{comment}
+\usepackage{color}
+\usepackage{mathtools}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{lastpage}
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage{siunitx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{systeme}
+\usepackage{wrapfig}
+\usepackage[numbered,framed]{matlab-prettifier}
+\usepackage{hyperref}
+
+\let\ph\mlplaceholder % shorter macro
+\lstMakeShortInline"
+
+\lstset{
+  style              = Matlab-editor,
+  basicstyle         = \mlttfamily,
+  escapechar         = ",
+  mlshowsectionrules = true,
+}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\renewcommand{\baselinestretch}{1.2}
+
+%\hypersetup{colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Filtros Activos e Osciladores}
+\lhead{Electrónica Geral}
+\cfoot{Página  \thepage \hspace{1pt} de \pageref{LastPage}}
+\pagenumbering{roman}
+
+
+\begin{document}
+
+\begin{titlepage}
+	\begin{center}
+		\begin{figure}[htb!]
+			\begin{center}
+				\includegraphics[width=10cm]{Imagens/istlogo.jpg}
+			\end{center}
+		\end{figure}
+        
+        \begin{center}
+        \LARGE{\textbf{\center Instituto Superior Técnico}}\\
+        \vspace{20pt}
+        \Large{\center Mestrado Integrado em Engenharia Aeroespacial}\\
+        \Large{\center Electrónica Geral}\\
+        \Large{\center 1º Semestre 2020/2021}\\
+        \end{center}
+            
+        \vspace{60pt}
+        \noindent\rule{15cm}{1pt}\\
+         \Huge{\center \textbf{1º Trabalho de Laboratório}} \par \Huge{\center \textbf{Filtros Activos e Osciladores
+}}\\
+         
+         \noindent\rule{15cm}{1pt}\\
+        
+        \vspace{60pt}
+        
+        
+        \begin{minipage}{0.5\textwidth}
+		\begin{flushleft} \large
+			\textbf{Grupo 7:}\\
+			89652, Carolina Pinheiro\\
+			89683, José Neves \\
+			89691, Leonardo Pedroso\\
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}[b]{0.4\textwidth}
+		\begin{flushright} \large
+        	\textbf{Docente:} \\
+            Prof. José António Beltran Gerald \\
+		\end{flushright}
+	\end{minipage}\\[2cm]
+        
+         \vspace{10pt}
+
+        \large{Outubro de 2020}\\
+        
+	\end{center}
+\end{titlepage}
+
+\newpage
+\renewcommand{\contentsname}{Índice}
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\subfile{01 Intro.tex}
+\subfile{02 KNH.tex}
+\subfile{03 TT.tex}
+\subfile{04 Oscilador.tex}
+\subfile{05 Filtro Rauch.tex}
+\end{document}
