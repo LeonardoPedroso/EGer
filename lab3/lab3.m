@@ -75,11 +75,11 @@ close all;
 %% 5_5
 clear;
 Ts = 1; %(s)
-Tsim = 1500; % (samples)
+Tsim = 0.5e4; % (samples)
 scramblerLocal = [3 5];
 scramblerRemote = [5 7];
 coefHybrid = [0 0.2 1 0.3 -0.4 -0.1 0.1 -0.05 -0.02 -0.01];
-c_ik_init = [0 0 0 0 0];
+c_ik_init = zeros(26,1);
 mu = 0.02;
 alpha = 0.9;
 
@@ -100,7 +100,7 @@ hold off;
 close all;
 
 figure('units','normalized','outerposition',[0 0 1 1]);
-plot(c_ik.Time,c_ik.Data,'LineWidth',3);
+plot(c_ik.Time,c_ik.Data(:,1:5),'LineWidth',3);
 hold on;
 ylabel('$c_i$','Interpreter','latex');
 xlabel('$k$','Interpreter','latex');
@@ -111,6 +111,25 @@ ax = gca;
 ax.XGrid = 'on';
 ax.YGrid = 'on'; 
 saveas(gcf,"./data/5_5/c_ik.png");
+hold off;
+close all;
+
+figure('units','normalized','outerposition',[0 0 1 1]);
+plot(c_ik.Time,c_ik.Data(:,6:end),'LineWidth',3);
+hold on;
+ylabel('$c_i$','Interpreter','latex');
+xlabel('$k$','Interpreter','latex');
+% lg = cell(16,1);
+% for i = 1:22
+%     lg{i,1} = sprintf("$c_{%02d}$",i+4);
+% end
+% legend(lg,...
+%     'Interpreter','latex');
+set(gca,'FontSize',35);
+ax = gca;
+ax.XGrid = 'on';
+ax.YGrid = 'on'; 
+saveas(gcf,"./data/5_5/c_ik_0.png");
 hold off;
 close all;
 
